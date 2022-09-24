@@ -79,17 +79,6 @@ def generate_proverbs(seed_text,next_words):
         seed_text += " " + output_word
     return seed_text
 
-list_of_words = [each for line in df['owe'] for each in line.split()]
-new_df = pd.DataFrame(list_of_words, columns=['words'])
-
-@st.cache
-def search_word(word):
-    list_of_words = [each for line in df['owe'] for each in line.split()]
-    new_df = pd.DataFrame(list_of_words, columns=['words'])
-    result_df = new_df[new_df['words'].str.contains(word)]
-    
-    return result_df['words'].drop_duplicates()
-
 def main():
     # st.title("Yoruba Proverbs Generator App")
    
@@ -118,14 +107,14 @@ def main():
         """)
 
         st.warning('NOTE: The english Translation might not give the accurate translation of the generated Yoruba proverb.')
-        st.subheader("How to use the web app")
+        st.subheader("How To Use The Web App")
         st.write("""
         1. Input Keyword should take in ONLY Yoruba Keywords/phrases with the right intonation marks.
         2. Number of Generated words is the number of next keywords you want the model to generate for you.
         3. You can only select one of the options under the Number of Generated words which are 5,10,15, or 20.
         4. After performing step 1 & 3, click on the Generate Proverbs button.
         """)
-        st.subheader('To get a letter with itonation/marks(Àmì)')
+        st.subheader('To Get A Letter With Intonation/Marks(Àmì)')
         st.info("""
         FOR PC(Windows):
         - Right click on the task bar
@@ -156,7 +145,7 @@ def main():
         st.write('- Oluwatooni Adebiyi (https://github.com/aoluwatooni)')
         st.write('- Samuel Iheagwam (https://github.com/Psalmuel69)')
         st.write('- Ugochukwu (https://github.com/Ugo-1)')
-        st.info('During #DSRoom challenge under the mentorship of Samson Afolabi')
+        st.info('During #DSRoom challenge under the mentorship of Samson Afolabi (https://twitter.com/samsonafo')
 if __name__ == '__main__':
     main()
     
