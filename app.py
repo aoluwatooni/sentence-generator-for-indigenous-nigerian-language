@@ -117,6 +117,7 @@ def main():
         st.subheader('To Get A Letter With Intonation/Marks(Àmì)')
         st.info("""
         FOR PC(Windows):
+        
         - Go to https://www.lexilogos.com/keyboard/yoruba.htm
         - Type your word, using the keyboard display on the website
         - Copy the word you typed (CTRL + C)
