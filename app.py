@@ -117,12 +117,15 @@ def main():
         st.subheader('To Get A Letter With Intonation/Marks(Àmì)')
         st.info("""
         FOR PC(Windows):
-        - Right click on the task bar
-        - CLick on show touch keyboard
-        - Long press the letter on the touch keyboard with the cursor
+        - Go to https://www.lexilogos.com/keyboard/yoruba.htm
+        - Type your word, using the keyboard display on the website
+        - Copy the word you typed (CTRL + C)
+        - Paste the word using (CTRL+V) on this Web App
         
         FOR MAC OS & PHONES:
-        - Long press the letter on your keyboard
+        - Make sure you add Yoruba as language preference in your keyword
+        - Change the keyboard language to Yoruba and type
+        - Voila..... you're good to go
         """)
 
     elif tabs == 'Generate Proverb':
