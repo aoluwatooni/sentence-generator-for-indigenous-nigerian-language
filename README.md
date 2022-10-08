@@ -33,6 +33,10 @@ This is a Yoruba proverb generator app. The model takes in a keyword or phrase i
 - Change the keyboard language to Yoruba and type
 - Voila..... you're good to go
 
+## Web Application
+[Yoruba Proverb Generator App](https://aadedolapo-sentence-generator-for-indigenous-nigeria-app-8vkc1t.streamlitapp.com/)
+
+
 ## Collaborators
 
 Dolapo Adebo https://github.com/aadedolapo  
