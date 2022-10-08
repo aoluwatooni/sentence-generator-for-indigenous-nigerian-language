@@ -25,7 +25,10 @@ This is a Yoruba proverb generator app. The model takes in a keyword or phrase i
 - Click on show touch keyboard
 - Long press the letter on the touch keyboard with the cursor
         
-***FOR MAC OS & PHONES:***
+***FOR MAC OS:***
+- Long press the letter on your keyboard
+
+***FOR PHONES:***
 - Make sure you add Yoruba as language preference in your keyword
 - Change the keyboard language to Yoruba and type
 - Voila..... you're good to go
