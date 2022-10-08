@@ -1,4 +1,3 @@
-from msilib.schema import tables
 import streamlit as st
 from st_on_hover_tabs import on_hover_tabs
 import tensorflow as tf
@@ -59,7 +58,7 @@ for line in corpus:
 max_sequence_len = max([len(x) for x in input_sequences])
 input_sequences = np.array(pad_sequences(input_sequences, maxlen=max_sequence_len,padding='pre'))
 
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('model500ep.h5')
 
 @st.cache
 def generate_proverbs(seed_text,next_words):
@@ -119,6 +118,11 @@ def main():
 
     elif tabs == 'Generate Proverb':
         st.title("Generate a Yoruba Proverb")
+        st.info("""
+        Get The Yoruba Alphabets With Intonation/Marks(Àmì):
+        - LEXILOGOS is a multilinguial keyboard. There's a virtual keyboard on the website that you can use in typing the Yoruba Alphabets.
+        - Here's the link to the website https://lexilogos.com/keyboard/yoruba.htm
+        """)
         search_term = st.text_input("Input Keyword")
         next_words = st.selectbox('Number of Generated words',(5,10,15,20))
         if st.button("Generate Proverb"):
@@ -126,6 +130,7 @@ def main():
             st.success('Generated Proverb: {}.'. format(results)) 
             translation = GoogleTranslator(source='auto', target='en').translate(results)
             st.success('English Translation of Generated proverb: {}.'.format(translation))
+        
 
     elif tabs == 'Contributors':
         st.title('Contributors')
