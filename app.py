@@ -110,10 +110,12 @@ def main():
         FOR PC(WINDOWS):
         - Right click on the task bar
         - Click on show touch keyboard
-        - Long press the letter on the touch keyboard with the cursor
+        - Long press the letter on the touch keyboard with the cursor.
         
         FOR MAC OS & PHONES:
-        - Long press the letter on your keyboard
+        - Make sure you add Yoruba as language preference in your keyword
+        - Change the keyboard language to Yoruba and type
+        - Voila..... you're good to go
         """)
 
     elif tabs == 'Generate Proverb':
