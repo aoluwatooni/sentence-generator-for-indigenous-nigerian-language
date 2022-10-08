@@ -58,7 +58,7 @@ for line in corpus:
 max_sequence_len = max([len(x) for x in input_sequences])
 input_sequences = np.array(pad_sequences(input_sequences, maxlen=max_sequence_len,padding='pre'))
 
-model = tf.keras.models.load_model('model500ep.h5')
+model = tf.keras.models.load_model('improvedmodel.h5')
 
 @st.cache
 def generate_proverbs(seed_text,next_words):
