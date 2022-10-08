@@ -58,7 +58,7 @@ for line in corpus:
 max_sequence_len = max([len(x) for x in input_sequences])
 input_sequences = np.array(pad_sequences(input_sequences, maxlen=max_sequence_len,padding='pre'))
 
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('improvedmodel.h5')
 
 @st.cache
 def generate_proverbs(seed_text,next_words):
@@ -80,18 +80,6 @@ def generate_proverbs(seed_text,next_words):
     return seed_text
 
 def main():
-    # st.title("Yoruba Proverbs Generator App")
-   
-    # html_temp = """
-    # <div style="background-color:#f63366;
-    #     border-radius: 25px;
-    #     padding:5px">
-    # <h2 style="color:white;
-    #     text-align:center;">Yoruba Proverbs Generator App</h2>
-    # </div>
-    # """
-    
-    # st.markdown(html_temp, unsafe_allow_html=True)
     st.markdown('<style>' + open('styles.css').read() + '</style>', unsafe_allow_html=True)
 
     with st.sidebar:
@@ -101,7 +89,6 @@ def main():
 
     if tabs == "Home":
         st.title("Yoruba Proverb Generator App")
-        #st.dataframe(df['owe'].sample(10))
         st.subheader('About')
         st.write("""This is a Yoruba proverb generator app. The model takes in a keyword or phrase in Yoruba language and generates a proverb in Yoruba language from the given keyword/phrase. Using the keras tokenizer to generate tokens and a Sequential model by adding an embedding layer and a bidirectional LSTM model. We also took into consideration, homonymns and language intonations to help the model generate a more readable proverb. In addition, using the deep-translator library, we added google translator API to help translate the generated Yoruba proverb to English Language for non-yoruba readers.
         """)
@@ -114,14 +101,16 @@ def main():
         3. You can only select one of the options under the Number of Generated words which are 5,10,15, or 20.
         4. After performing step 1 & 3, click on the Generate Proverbs button.
         """)
-        st.subheader('To Get A Letter With Intonation/Marks(Àmì)')
+        st.subheader('How To Get The Yoruba Alphabets With Intonation/Marks(Àmì)')
         st.info("""
-        FOR PC(Windows):
-        
-        - Go to https://www.lexilogos.com/keyboard/yoruba.htm
-        - Type your word, using the keyboard display on the website
-        - Copy the word you typed (CTRL + C)
-        - Paste the word using (CTRL+V) on this Web App
+        TRHOUGH A THIRD PARTY WEBSITE:
+        - LEXILOGOS is a multilinguial keyboard. There's a virtual keyboard on the website that you can use in typing the Yoruba Alphabets.
+        - Here's the link to the website https://lexilogos.com/keyboard/yoruba.htm
+
+        FOR PC(WINDOWS):
+        - Right click on the task bar
+        - Click on show touch keyboard
+        - Long press the letter on the touch keyboard with the cursor.
         
         FOR MAC OS & PHONES:
         - Make sure you add Yoruba as language preference in your keyword
@@ -131,6 +120,11 @@ def main():
 
     elif tabs == 'Generate Proverb':
         st.title("Generate a Yoruba Proverb")
+        st.info("""
+        Get The Yoruba Alphabets With Intonation/Marks(Àmì):
+        - LEXILOGOS is a multilinguial keyboard. There's a virtual keyboard on the website that you can use in typing the Yoruba Alphabets.
+        - Here's the link to the website https://lexilogos.com/keyboard/yoruba.htm
+        """)
         search_term = st.text_input("Input Keyword")
         next_words = st.selectbox('Number of Generated words',(5,10,15,20))
         if st.button("Generate Proverb"):
@@ -138,6 +132,7 @@ def main():
             st.success('Generated Proverb: {}.'. format(results)) 
             translation = GoogleTranslator(source='auto', target='en').translate(results)
             st.success('English Translation of Generated proverb: {}.'.format(translation))
+        
 
     elif tabs == 'Contributors':
         st.title('Contributors')
@@ -149,7 +144,7 @@ def main():
         st.write('- Oluwatooni Adebiyi (https://github.com/aoluwatooni)')
         st.write('- Samuel Iheagwam (https://github.com/Psalmuel69)')
         st.write('- Ugochukwu (https://github.com/Ugo-1)')
-        st.info('During #DSRoom challenge under the mentorship of Samson Afolabi (https://twitter.com/samsonafo')
+        st.info('During #DSRoom challenge under the mentorship of Samson Afolabi (https://twitter.com/samsonafo)')
 if __name__ == '__main__':
     main()
     
